@@ -1,0 +1,15 @@
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-default">E-mail</span>
+    </div>
+    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" #phonebook_email>
+    <div class="input-group-append">
+    </div>
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-default">Postal Address</span>
+    </div>
+    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" #phonebook_paddress>
+  </div>
+<app-details #com2></app-details><app-root (myEvent)="com2.getData(phonebook_email.value,phonebook_paddress.value)"></app-root>
