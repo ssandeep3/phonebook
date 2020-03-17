@@ -1,0 +1,45 @@
+<div class="container-fluid">
+  <div class="alert alert-primary" role="alert">
+    MY PHONE DIARY
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
+    </div>
+    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" #phonebook_name>
+    <div class="input-group-append">
+      
+      <i (click)="toggle()"><span class="input-group-text" >Details</span></i>
+    </div>
+  </div>
+
+  <app-details *ngIf="toggle()"></app-details>
+  <!-- <app-details [childMessage] = "parentMessage"></app-details> -->
+  
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-default">Number</span>
+    </div>
+    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" #phonebook_number>
+  </div>
+  <ng-template app-details></ng-template>
+</div>
+<div class="container">
+  <div class="container-fluid">
+    <button class="btn btn-primary m-3" type="submit" (click) = "dispRecord(phonebook_name,phonebook_number)">|<</button>
+    <button class="btn btn-primary m-3" type="submit"><<</button>
+    <button class="btn btn-primary m-3" type="submit">>></button>
+    <button class="btn btn-primary m-3" type="submit">>|</button>
+  </div>
+
+  <div class="container-fluid">
+    <!-- <button class="btn btn-secondary m-2" type="submit" (click) = "addRecord(phonebook_name.value,phonebook_number.value,phonebook_email.value,phonebook_paddress.value)">ADD</button> -->
+    <button class="btn btn-secondary m-2" type="submit" (click) = "getData(phonebook_name.value,phonebook_number.value)">ADD</button>
+    <button class="btn btn-secondary m-2" type="submit">SEARCH</button>
+    <button class="btn btn-secondary m-2" type="submit">DELETE</button>
+    <button class="btn btn-secondary m-2" type="submit">UPDATE</button>
+  </div>
+  <div>
+    <span>{{getCurrent()}}/{{getTotal()}}</span>
+  </div>
+</div>
